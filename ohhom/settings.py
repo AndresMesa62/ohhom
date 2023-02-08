@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "category",
+    "account",
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "ohhom.wsgi.application"
 
-
+AUTH_USER_MODEL='account.Account'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
