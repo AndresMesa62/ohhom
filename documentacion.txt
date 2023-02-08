@@ -1,0 +1,10 @@
+CORREO ELECTRONICO ADMIN:
+
+cuanta correo admin: ohom.adm@gmail.com
+contraseña: O-Hom2023.
+
+DJANGO USUARIO ADMIN:
+
+correo: ohom.adm@gmail.com
+usuario: OHOM_ADMIN
+contraseña: OHom2023*. 
