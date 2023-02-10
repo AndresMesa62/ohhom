@@ -50,6 +50,10 @@ class Property(models.Model):
     video360_url           = models.URLField(default='https://www.youtube.com/?hl=es&gl=EC')
     videoblog_url          = models.URLField(default='https://www.youtube.com/?hl=es&gl=EC')
 
+    class Meta:
+        verbose_name = 'property'
+        verbose_name_plural = 'properties'
+
     def __str__(self):
         return self.property_name
     
