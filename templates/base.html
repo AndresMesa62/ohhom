@@ -8,6 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O-Hom</title>
 <link rel="stylesheet" href="{% static './css/style.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
     
@@ -22,3 +24,15 @@
     <!--footer-->  
     {% include 'includes/footer.html' %}
     
+    <script>
+        var $ = window.jQuery;
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarMenu = document.querySelector('.navbar-menu');
+
+        navbarToggle.addEventListener('click', () => {
+        navbarMenu.classList.toggle('is-active');
+        });
+
+    </script>
+</body>
+

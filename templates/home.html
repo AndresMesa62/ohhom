@@ -10,14 +10,29 @@
         
         <div class="dibujo-borde-izquierdo">
             <div class=" texto-izquierda-main ">
-              <br>Like Your<br>
+              Like Your<br>
               <b style="color:#FCE88D">Home </b>
               <br>Anywere <br>
-              <a class="menuli linkhome" href="#locations-id"><br>See Locations</a>
+              <a class="linkhome" style="height: 60px;" href="{% url 'home' %}#locations-id">See Locations</a>
              </div>
             
         </div>   
-        <div class="texto-derecha-main"><img id="imagen-main-derecha"src="{% static 'img/blanco.png' %}"></div>
+        
+        <div class="texto-derecha-main">
+          <div class="textos-banner-derecha">
+            <span class="spacer"></span>
+            <span class="t1">1.</span>
+            <span class="t2">SELECT YOUR HOUSE</span>
+              <span class="spacer"></span>
+            <span class="t1">2.</span>
+            <span class="t2">READ TERMS AND CONDITIONS</span>
+              <span class="spacer"></span>
+            <span class="t1">3.</span>
+            <span class="t2">PAY</span>
+            <span class="spacer"></span>
+          </div>
+            
+        </div>
         
     </div>
 </div>
@@ -36,11 +51,11 @@
       Founded in 2007, Sparch is specializing in providing innovative services such as website design, brand 
       identity and marketing.
     </p>
-    <a href="#"><br><b>LEARN MORE</b></a>
+    <a  href="#"><br><b>LEARN MORE</b></a>
     
   </div>
   <div class="right-conteiner-about">
-    <img src="{% static 'img/about_us.png' %}" alt="Imagen">
+    <img src="{% static 'images/about_us.png'%}" alt="Imagen">
     
   </div>
 </div>
@@ -48,7 +63,7 @@
 <!-- Contenido de la página Servicios-->
 <div class="container-mitad" style="margin-top:-10px;">
   <div class="left-conteiner-services">
-    <img src="{% static 'img/servicios.png' %}" alt="Imagen">
+    <img src="{% static 'images/servicios.png' %}" alt="Imagen">
   </div>
   <div class="right-conteiner-services">
     <p><B>SERVICES</B></p>
@@ -98,7 +113,7 @@
 <div class="galeria" >
   <div class="contenedor-locations">
     <div class="img-location">
-      <img src="{% static 'img/servicios.png' %}" alt="Imagen 1" />
+      <img src="{% static 'images/servicios.png' %}" alt="Imagen 1" />
       <div class="texto-locations">
         <h2>Medellín la ciudad de la eterna primavera</h2>
         <p>Esta es una descripción generica de todos los proyectos que hay en medellin en este momento</p>
@@ -106,7 +121,7 @@
       </div>
     </div>
     <div class="img-location">
-      <img src="{% static 'img/servicios.png' %}" alt="Imagen 1" />
+      <img src="{% static 'images/servicios.png' %}" alt="Imagen 1" />
       <div class="texto-locations">
         <h2>Medellín la ciudad de la eterna primavera</h2>
         <p>Esta es una descripción generica de todos los proyectos que hay en medellin en este momento</p>
@@ -114,7 +129,7 @@
       </div>
     </div>
     <div class="img-location">
-      <img src="{% static 'img/servicios.png' %}" alt="Imagen 1" />
+      <img src="{% static 'images/servicios.png' %}" alt="Imagen 1" />
       <div class="texto-locations">
         <h2>Medellín la ciudad de la eterna primavera</h2>
         <p>Esta es una descripción generica de todos los proyectos que hay en medellin en este momento</p>
@@ -122,7 +137,7 @@
       </div>
     </div>
     <div class="img-location">
-      <img src="{% static 'img/servicios.png' %}" alt="Imagen 1" />
+      <img src="{% static 'images/servicios.png' %}" alt="Imagen 1" />
       <div class="texto-locations">
         <h2>Medellín la ciudad de la eterna primavera</h2>
         <p>Esta es una descripción generica de todos los proyectos que hay en medellin en este momento</p>
@@ -130,7 +145,7 @@
       </div>
     </div>
     <div class="img-location">
-      <img src="{% static 'img/servicios.png' %}" alt="Imagen 1" />
+      <img src="{% static 'images/servicios.png' %}" alt="Imagen 1" />
       <div class="texto-locations">
         <h2>Medellín la ciudad de la eterna primavera</h2>
         <p>Esta es una descripción generica de todos los proyectos que hay en medellin en este momento</p>
@@ -138,7 +153,7 @@
       </div>
     </div>
     <div class="img-location">
-      <img src="{% static 'img/servicios.png' %}" alt="Imagen 1" />
+      <img src="{% static 'images/servicios.png' %}" alt="Imagen 1" />
       <div class="texto-locations">
         <h2>Medellín la ciudad de la eterna primavera</h2>
         <p>Esta es una descripción generica de todos los proyectos que hay en medellin en este momento</p>
@@ -146,7 +161,7 @@
       </div>
     </div>
     <div class="img-location">
-      <img src="{% static 'img/servicios.png' %}" alt="Imagen 1" />
+      <img src="{% static 'images/servicios.png' %}" alt="Imagen 1" />
       <div class="texto-locations">
         <h2>Medellín la ciudad de la eterna primavera</h2>
         <p>Esta es una descripción generica de todos los proyectos que hay en medellin en este momento</p>
@@ -154,7 +169,7 @@
       </div>
     </div>
     <div class="img-location">
-      <img src="{% static 'img/servicios.png' %}" alt="Imagen 1" />
+      <img src="{% static 'images/servicios.png' %}" alt="Imagen 1" />
       <div class="texto-locations">
         <h2>Medellín la ciudad de la eterna primavera</h2>
         <p>Esta es una descripción generica de todos los proyectos que hay en medellin en este momento</p>
@@ -162,7 +177,7 @@
       </div>
     </div>
     <div class="img-location">
-      <img src="{% static 'img/servicios.png' %}" alt="Imagen 1" />
+      <img src="{% static 'images/servicios.png' %}" alt="Imagen 1" />
       <div class="texto-locations">
         <h2>Medellín la ciudad de la eterna primavera</h2>
         <p>Esta es una descripción generica de todos los proyectos que hay en medellin en este momento</p>
@@ -174,10 +189,10 @@
 </div>
 
 <div class="logos-aliados">
-  <img src="{% static 'img/logo-aliado1.png' %}" alt="Logo 1">
-  <img src="{% static 'img/logo-aliado2.png' %}" alt="Logo 2">
-  <img src="{% static 'img/logo-aliado3.png' %}" alt="Logo 3">
-  <img src="{% static 'img/logo-aliado4.png' %}" alt="Logo 4">
+  <img src="{% static 'images/logo-aliado1.png' %}" alt="Logo 1">
+  <img src="{% static 'images/logo-aliado2.png' %}" alt="Logo 2">
+  <img src="{% static 'images/logo-aliado3.png' %}" alt="Logo 3">
+  <img src="{% static 'images/logo-aliado4.png' %}" alt="Logo 4">
 </div>
 
 

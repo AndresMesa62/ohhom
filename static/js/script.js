@@ -1,3 +1,4 @@
+var $ = window.jQuery;
 const navbarToggle = document.querySelector('.navbar-toggle');
 const navbarMenu = document.querySelector('.navbar-menu');
 

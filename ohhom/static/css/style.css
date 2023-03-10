@@ -86,7 +86,7 @@ body {
 }
 /* Estilos del main */
 .fondo-main {
-  background: url('../img/fondo_main.png') no-repeat center center;
+  background: url('../images/fondo_main.png') no-repeat center center;
   background-size: cover;
   margin: 0 3.5% 0 3.5%;
   border: 1px solid #000000;
@@ -100,7 +100,7 @@ body {
 .dibujo-borde-izquierdo{
   background-clip: padding-box;
   background-image: linear-gradient(to right, #FCE88D 4%, transparent 0%);
-  height: 400px;
+  height: 50vh;
   width: 100px;
   /* or 112% */
   transform: translatex(210%) translateY(25%);
@@ -115,7 +115,7 @@ body {
   /* or 112% */
   transform: translatex(5%) ;
   text-transform: capitalize;
-
+  
   color: #FFFFFF;
 }
 
@@ -124,23 +124,57 @@ body {
   bottom: 0;
   right: 0;
   max-width: 100%;
-  height: auto; /* Altura automática */
+  flex: 1;
+  /* Estilos para la columna derecha */
+  margin-right: 5%;
+  height: 200px;
   
-  transform: translatey(84%) ;
 }
+.textos-banner-derecha {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: auto ;
+  height: auto ;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-top: 250px;
+}
+
+.textos-banner-derecha span {
+  display: flex;
+  margin: 0 ;
+  padding-right: 10px;
+  white-space: nowrap; /* Evita que los textos se envuelvan en varias líneas */
+}
+
+
+
+
 .linkhome{
-  color: white;
-  float: left;
+
   font-size: 20px;
   transform: translatex(-20%);
   line-height: 45px;
+  margin-left: 10%;
+  margin-top: 80px;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(252, 232, 141, 1);
+  color: #000;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
 }
 .linkhome:hover {
-  color: #FCE88D; /* color de fondo al pasar el puntero */
+  background-color: rgba(252, 232, 141, 0.8); /* color de fondo al pasar el puntero */
 }
 
 .linkhome:active {
-  color: #FCE88D; /* color de fondo al hacer clic */
+  background-color: rgba(252, 232, 141, 0.8); /* color de fondo al hacer clic */
 }
 #imagen-main-derecha{
   width: 100%;
@@ -186,9 +220,17 @@ body {
   background-color: #FCE88D;
   text-align: center;
   margin-right: 5%;
+  border-radius: 5px;
+  text-decoration: none;
   
 }
+.left-conteiner-about a:hover {
+  background-color: rgba(252, 232, 141, 0.8); /* color de fondo al pasar el puntero */
+}
 
+.left-conteiner-about a:active {
+  background-color: rgba(252, 232, 141, 0.8); /* color de fondo al hacer clic */
+}
 .right-conteiner-about {
   
   display: flex;
@@ -423,7 +465,7 @@ body {
 
 /*Estilos seccion contacto*/
 .contacto-seccion {
-  background-image: url('../img/contacto.png') ;
+  background-image: url('../images/contacto.png') ;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -550,10 +592,10 @@ footer {
     color: #FFFFFF;
   }
   .linkhome{
-    color: white;
+    color: #000;
     float: left;
     font-size: 14px;
-    transform: translatex(-20%);
+    transform: translatex(-10%);
     line-height: 45px;
   }
   .dibujo-borde-izquierdo{
@@ -567,7 +609,11 @@ footer {
   .container-mitad {
     grid-template-columns: 1fr;
   }
-  .container-skills {
+  .textos-banner-derecha {
+    display: none;
+  }
+
+  .container-skills{
     grid-template-columns: 1fr;
     display: block;
   }
