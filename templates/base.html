@@ -24,15 +24,6 @@
     <!--footer-->  
     {% include 'includes/footer.html' %}
     
-    <script>
-        var $ = window.jQuery;
-        const navbarToggle = document.querySelector('.navbar-toggle');
-        const navbarMenu = document.querySelector('.navbar-menu');
-
-        navbarToggle.addEventListener('click', () => {
-        navbarMenu.classList.toggle('is-active');
-        });
-
-    </script>
+    <script src="{% static './js/script.js' %}"></script>
 </body>
 
