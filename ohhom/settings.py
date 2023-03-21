@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "category",
     "account",
     "agency",
+    "location",
 ]
 
 MIDDLEWARE = [

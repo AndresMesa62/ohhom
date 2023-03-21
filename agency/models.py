@@ -1,5 +1,6 @@
 from django.db import models
 from category.models import category
+from location.models import Location
 from django.urls import reverse
 # Create your models here.
 
@@ -22,9 +23,7 @@ class Property(models.Model):
     owner_email   = models.CharField(max_length=200,default='ohom.adm@gmail.com')
     #ubication
     address       = models.CharField(max_length=200,unique=True)
-    municipality  = models.CharField(max_length=200)
-    state         = models.CharField(max_length=200)
-    country       = models.CharField(max_length=200)
+    location      = models.ForeignKey(Location, on_delete=models.CASCADE) 
     floor                  = models.IntegerField()
     
     #Aditional information disponibility
