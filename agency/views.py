@@ -1,15 +1,21 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Property
 from category.models import category
+from location.models import Location
 # Create your views here.
 
-def agency(request,category_slug=None):
+def agency(request,category_slug=None,location_slug=None):
     categories=None
+    location=None
     properties=None
-
+    
     if category_slug!=None:
         categories=get_object_or_404(category, slug=category_slug)
         properties=Property.objects.filter(category=categories,is_avalible=True)
+        property_count=properties.count()
+    elif location_slug!=None:
+        location=get_object_or_404(Location, slug=location_slug)
+        properties=Property.objects.filter(location=location,is_avalible=True)
         property_count=properties.count()
     else:
         properties=Property.objects.all().filter(is_avalible=True)
