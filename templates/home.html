@@ -51,7 +51,7 @@
       Founded in 2007, Sparch is specializing in providing innovative services such as website design, brand 
       identity and marketing.
     </p>
-    <a  href="#"><br><b>LEARN MORE</b></a>
+    <a  href="{% url 'about' %}"><br><b>LEARN MORE</b></a>
     
   </div>
   <div class="right-conteiner-about">
@@ -119,7 +119,7 @@
       <div class="texto-locations">
         <h2>{{ location.location_name }}</h2>
         <p>{{ location.location_description }}</p>
-        <a href="#">SEE LOCATION</a>
+        <a href="{{ location.get_url }}">SEE LOCATION</a>
       </div>
     </div>
     {% endfor %}

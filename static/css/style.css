@@ -585,7 +585,54 @@ footer {
   opacity: 1;
 }
 
+/* Estilos para about */
+ /* Estilos para el primer contenedor */
+ .container-about-us {
+  background-color: #fce88d;
+  width: 100%;
+}
+
+.centered-paragraph {
+  width: 30%;
+  margin: 0 auto;
+  color: #000;
+  text-align: left;
+}
+
+/* Estilos para el segundo contenedor */
+.container-about-us-2 {
+  width: 100%;
+  background-color: #4d4d4d;
+}
+
+.row-about-us {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column-about-us-left,
+.column-about-us-right {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  align-items: center;
+}
+.column-about-us-left P,
+.column-about-us-right P {
+  width: 70%;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .column-about-us-left,
+  .column-about-us-right {
+    width: 50%;
+  }
+}
 /* Estilos para el footer en dispositivos móviles */
+
 
 @media (max-width: 768px) {
   .navbar-menu {
@@ -707,9 +754,11 @@ footer {
     flex-wrap: wrap;
     max-height: calc(100vh - 100px); /* 3 rows */
   }
-  
+
+   
 }
 @media (max-width: 450px) {
+  
   .contenedor-locations .img-location {
     max-width: 100%;
     height: 100%;
