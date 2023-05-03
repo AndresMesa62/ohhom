@@ -109,4 +109,15 @@ class Property(models.Model):
 
     def __str__(self):
         return self.property_name
+
+class PropertyGallery(models.Model):
+    property = models.ForeignKey(Property,default=None,on_delete=models.CASCADE)
+    image= models.ImageField(upload_to='agency/properties',max_length=255)  
     
+    def __str__(self):
+        name=str(self.property.property_name)+" ( "+str(self.property.address)+" )"
+        return name
+
+    class Meta:
+        verbose_name = 'property gallery'
+        verbose_name_plural = 'property gallery'

@@ -645,6 +645,142 @@ footer {
   padding: 10px;
   color: #fff;
 }
+.detalle_propiedad {
+  box-sizing: border-box;
+}
+
+.contenedor-principal {
+  display: flex;
+}
+
+.columna-izquierda {
+  margin: 10px 20px 0px 20px ;
+  width: 25%;
+  height: 140px;
+  padding: 10px;
+  background-color: white;
+  border-width: 4px;  
+  border: solid #FCE88D;
+}
+
+.columna-derecha {
+  width: 75%;
+  height: 130px;
+  padding: 10px;
+}
+
+.galeria-imagenes {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.galeria-imagenes img {
+  margin: 0px 4px 4px 0px;
+  width: 20%;
+  height: 125px;
+  object-fit:cover;
+}
+
+.contenedor-secundario {
+  display: flex;
+}
+.columna-izquierda-secundario {
+  margin: 10px 0px 0px 10px ;
+  width: 60%;
+  height: 500px;
+  
+}
+
+.columna-derecha-secundario {
+  padding: 10px;
+  width: 40%;
+  height: 500px;
+  
+}
+.columna-izquierda-secundario img {
+  width: 100%;
+  height: 500px;
+  object-fit:cover;
+}
+@media only screen and (max-width: 600px) {
+  /* Columnas principales */
+  .contenedor-principal {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .columna-izquierda {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .columna-derecha {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Galería de imágenes */
+  .galeria-imagenes {
+    flex-wrap: wrap;
+  }
+
+  .galeria-imagenes img {
+    width: 48%;
+    margin: 1% 0;
+  }
+
+  /* Columnas secundarias */
+  .contenedor-secundario {
+    flex-direction: column;
+  }
+
+  .columna-izquierda-secundario {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .columna-derecha-secundario {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+/* Tablas de información*/
+.tabla-detalles {
+  padding: 10px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #666;
+  color: black;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-top: solid whitesmoke;
+  border-width: 1px;
+}
+
+th:first-child, td:first-child {
+  background-color: #999;
+  color: #fff;
+}
+
+th:last-child, td:last-child {
+  background-color: #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+
 
 @media only screen and (min-width: 768px) {
   .column-about-us-left,

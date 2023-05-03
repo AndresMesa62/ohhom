@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Property
+from .models import Property, PropertyGallery
 from category.models import category
 from location.models import Location
 # Create your views here.
@@ -31,7 +31,11 @@ def property_detail(request, category_slug, property_slug):
         single_property=Property.objects.get(category__slug=category_slug,slug=property_slug)
     except Exception as e:
         raise e
+
+    # get the property gallery
+    property_gallery = PropertyGallery.objects.filter(property_id=single_property.id)
     context = {
         'single_property':single_property,
+        'property_gallery':property_gallery,
     }
     return render(request,'agency/property_detail.html',context)

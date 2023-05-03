@@ -1,94 +1,463 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<section class="section-content padding-y bg">
-    <div class="container">
-    
-    <!-- ============================ COMPONENT 1 ================================= -->
-    <div class="card">
-        <div class="row no-gutters">
-            <aside class="col-md-6">
-    <article class="gallery-wrap"> 
-        <div class="img-big-wrap">
-           <a href="#"><img src="{{ single_property.images.url }}"></a>
-        </div> <!-- img-big-wrap.// -->
-        
-    </article> <!-- gallery-wrap .end// -->
-            </aside>
-            <main class="col-md-6 border-left">
-    <article class="content-body">
-    
-    <h2 class="title">{{ single_property.property_name }}</h2>
-    
-    <div class="mb-3"> 
-        <var class="price h4">$ {{ single_property.price }}</var> 
-    </div> 
-    
-    <p>{{ single_property.description }}</p>
-    
-    <div class="mb-3"> 
-      <var class="price h4">¿Why This Place?</var> 
-    </div> 
-  
-    <p>{{ single_property.why_this_place }}</p>
-  
-    <div class="mb-3"> 
-      <var class="price h4">¿about transportation?</var> 
-    </div> 
 
-    <p>{{ single_property.about_transportation }}</p>
-
+<div class="contenedor-principal">
+    <div class="columna-izquierda detalle_propiedad" style="height: auto
+    ;">
+      <h2>{{ single_property.property_name }}</h2><br>
+      <p>{{ single_property.description }}</p><br>
+      <a class="menuli" href="#info" style="margin-left: 0px;">More about this property...</a>
+    </div>
+    <div class="columna-derecha detalle_propiedad">
+      <div class="galeria-imagenes">
+        <img src="{{ single_property.images.url }}"/>
+        {% for i in property_gallery %}
+        <img src="{{ i.image.url }}"/>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="contenedor-secundario detalle_propiedad">
+    <div class="columna-izquierda-secundario detalle_propiedad">
+      <img src="{{ single_property.images.url }}" alt="Imagen seleccionada" />
+    </div>
+    <div class="columna-derecha-secundario detalle_propiedad">
+      <iframe width="100%" height="248px" src="{{ single_property.video360_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="100%" height="248px" style="border:0;"  src="{{ single_property.maps_url }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <div class="tabla-detalles" id="info">
+    <div class="tabla-detalles">
+      <table>
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Is Verified?</td>
+                {% if single_property.is_verified %}
+                <td>Yes</td>
+                {% else %}
+                <td>Not</td>
+                {% endif %}
+              </tr>
+          <tr>
+            <td>Ubication</td>
+            <td>{{ single_property.location }}</td>
+          </tr>
+          <tr>
+            <td>Area </td>
+            <td>{{ single_property.area }} Mts^2</td>
+          </tr>
+          <tr>
+            <td>Is Furnished?</td>
+            <td>{{ single_property.category }}</td>
+          </tr>
+          <tr>
+            <td>Bedrooms</td>
+            <td>{{ single_property.number_of_rooms }}</td>
+          </tr>
+          <tr>
+            <td>Bathrooms</td>
+            <td>{{ single_property.number_of_bathrooms }}</td>
+          </tr>
+          <tr>
+            <td class="hidden">Has Integral Kitchen?</td>
+            {% if single_property.has_integral_kitchen %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Dining Room?</td>
+            {% if single_property.has_dining_room %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Work Zone?</td>
+            {% if single_property.has_work_zone %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Hall?</td>
+            {% if single_property.has_hall %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Study?</td>
+            {% if single_property.has_study %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Balcony Or Terrace?</td>
+            {% if single_property.has_balcony_or_terrace %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Number Of Balconies Or Terraces</td>
+            {% if single_property.has_balcony_or_terrace %}
+            <td class="hidden">{{ single_property.number_of_balcony_or_terrace}}</td>
+            {% else %}
+            <td class="hidden">0</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Pool?</td>
+            {% if single_property.has_pool %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Parkland?</td>
+            {% if single_property.has_parkland %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Pet Area?</td>
+            {% if single_property.has_pet_area %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Gym?</td>
+            {% if single_property.has_gym %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Motorcycle Parking?</td>
+            {% if single_property.has_motorcycle_parking %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td>Has Car Parking?</td>
+            {% if single_property.has_car_parking %}
+            <td>Yes</td>
+            {% else %}
+            <td>Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Concierge?</td>
+            {% if single_property.has_concierge %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Doorman?</td>
+            {% if single_property.has_doorman %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Elevator?</td>
+            {% if single_property.has_elevator %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
     
-    <div class="mb-3"> 
-      <var class="price h4">¿If I'm a Student?</var> 
-    </div> 
-
-    <p>{{ single_property.for_students }}</p>
-
-        <a href="./product-detail.html" class="btn  btn-primary"> <span class="text">Add to cart</span> <i class="fas fa-shopping-cart"></i>  </a>
-    </article> <!-- product-info-aside .// -->
-            </main> <!-- col.// -->
-        </div> <!-- row.// -->
-    </div> <!-- card.// -->
-    <!-- ============================ COMPONENT 1 END .// ================================= -->
-    
-    <br>
-    <iframe src="{{ single_property.maps_url }}" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <iframe width="560" height="315" src="{{ single_property.video360_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <div class="row">
-                <div class="col-md-9">
-    
-        <header class="section-heading">
-            <h3>Customer Reviews </h3>  
+          <tr>
+            <td>Has WIFI?</td>
+            {% if single_property.has_wifi %}
+            <td>Yes</td>
+            {% else %}
+            <td>Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Air Conditioning?</td>
+            {% if single_property.has_air_conditioning %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Hot Water?</td>
+            {% if single_property.has_hot_water %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Security Cameras?</td>
+            {% if single_property.has_security_cameras %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Smoke Detector?</td>
+            {% if single_property.has_smoke_detector %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Coffe Maker?</td>
+            {% if single_property.has_coffe_maker %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Dishwasher?</td>
+            {% if single_property.has_dishwasher %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Oven?</td>
+            {% if single_property.has_oven %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Plates And Cutlery?</td>
+            {% if single_property.has_plates_and_cutlery %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Microwave?</td>
+            {% if single_property.has_microwave %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Freezer?</td>
+            {% if single_property.has_freezer %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Clothes Iron?</td>
+            {% if single_property.has_clothes_iron %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Washing Machine?</td>
+            {% if single_property.has_washing_machine %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Dryer?</td>
+            {% if single_property.has_dryer %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Towels?</td>
+            {% if single_property.has_towels %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Soap?</td>
+            {% if single_property.has_soap %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Toilet Paper?</td>
+            {% if single_property.has_toilet_paper %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Hair Dryer?</td>
+            {% if single_property.has_hair_dryer %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has Bed Sheets?</td>
+            {% if single_property.has_bed_sheets %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Has TV?</td>
+            {% if single_property.has_tv %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Number Of TVs</td>
+            <td class="hidden">{{ single_property.number_of_tvs }}</td>
             
-        </header>
+          </tr>
+          <tr>
+            <td class="hidden">Has Beds?</td>
+            {% if single_property.has_bed %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Number Of Beds</td>
+            <td class="hidden">{{ single_property.number_of_beds }}</td>
+          </tr>
+          <tr>
+            <td class="hidden">Has Closet?</td>
+            {% if single_property.has_closet %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Number Of Closets</td>
+            <td class="hidden">{{ single_property.number_of_closets }}</td>
+          </tr>
+          <tr>
+            <td class="hidden">Allows Pets?</td>
+            {% if single_property.allows_pets %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Allows Smokers?</td>
+            {% if single_property.allows_smokers %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td class="hidden">Allows Parties?</td>
+            {% if single_property.allows_parties %}
+            <td class="hidden">Yes</td>
+            {% else %}
+            <td class="hidden">Not</td>
+            {% endif %}
+          </tr>
+          <tr>
+            <td ><b>Why This Place?</b></td>
+            <td >{{ single_property.why_this_place }}</td>
+          </tr>
+          <tr>
+            <td ><b>About Transportation</b></td>
+            <td >{{ single_property.about_transportation }}</td>
+          </tr>
+          <tr>
+            <td ><b>For Students</b></td>
+            <td >{{ single_property.for_students }}</td>
+          </tr>
+         <tr>
+            <td><b>Price</b></td>
+            <td><b>$ {{ single_property.price }} COP</b></td>
+          </tr>
+         
+          
+          <!-- 30 filas ocultas más aquí -->
+        </tbody>
+      </table>
+      
+      
+    </div>
+    <div style="margin-top: 20px;margin-bottom: 20px;display: flex;justify-content: center;">
+      <button  style="margin: 0 10px; width: 20%;height: 40px; background-color: #FCE88D;" id="ver-todo">Ver todo</button>
+      <button  style="margin: 0 10px;width: 20%;height: 40px; background-color: #FCE88D;" id="rentar">Rentar</button>
+    </div>
     
-        <article class="box mb-3">
-            <div class="icontext w-100">
-                <img src="{% static './images/avatars/avatar1.jpg' %}" class="img-xs icon rounded-circle">
-                <div class="text">
-                    <span class="date text-muted float-md-right">24.04.2020 </span>  
-                    <h6 class="mb-1">Mike John </h6>
-                    
-                </div>
-            </div> <!-- icontext.// -->
-            <div class="mt-3">
-                <p>
-                    Dummy comment Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip
-                </p>	
-            </div>
-        </article>
-    
-        
-    
-        </div> <!-- col.// -->
-    </div> <!-- row.// -->
-    
-    
-    </div> <!-- container .//  -->
-    </section>
-    <!-- ========================= SECTION CONTENT END// ========================= -->
+     
+    <script>
+        const galeria = document.querySelector('.galeria-imagenes');
+        const imagenes = galeria.querySelectorAll('img');
+        const imagenSeleccionada = document.querySelector('.contenedor-secundario img');
+  
+        imagenes.forEach((imagen) => {
+          imagen.addEventListener('click', () => {
+            imagenSeleccionada.src = imagen.src;
+          });
+        });
+      </script>
+      <script>
+        const verTodoBtn = document.getElementById("ver-todo");
+        const filasOcultas = document.querySelectorAll(".hidden");
+  
+        verTodoBtn.addEventListener("click", function() {
+          filasOcultas.forEach(function(fila) {
+            fila.classList.toggle("hidden");
+          });
+        });
+  
+      </script>
     {% endblock %}
     
