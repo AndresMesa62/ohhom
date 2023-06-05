@@ -3,9 +3,9 @@
 {% block content %}
 
 <!-- ========================= SECTION PAGETOP ========================= -->
-<section class="section-pagetop bg" style="background-color: #e0e0e0;">
-    <div class="container" style="background-color: #e0e0e0;">
-        <h2 class="title-page" style="background-color: #e0e0e0;color: BLACK;">Our Agency, <b>{{ property_count }}</b> properties found</h2>
+<section class="section-pagetop bg" style="background-color: #FCE88D;">
+    <div class="container" style="background-color: #FCE88D;justify-content: center;text-align: center;">
+        <h2 class="title-page" style="background-color: #FCE88D;color: BLACK;">We have found <b>{{ property_count }}</b> properties with the selected filter</h2>
         
     </div> <!-- container //  -->
     </section>
@@ -13,20 +13,21 @@
     
     <!-- ========================= SECTION CONTENT ========================= -->
             <div class="agency-container">
-                <div class="agency-selectors">
-                    <ul class="agency-select">
-                        <li><a href="{% url 'agency' %}">All Properties</a></li>
-                        <h3>Categories</h3>
+                <div class="agency-selectors" style="background-color: #303030;">
+                    <ul class="agency-select" style="list-style-type: none;">
+                      <br><br>
+                        <li><a href="{% url 'agency' %}" style="text-decoration: none; color: gray;">All Properties</a></li>
+                        <br><br>
+                        <h3 style="color: whitesmoke">Categories</h3>
                         {% for category in links %}
-                            <li><a href="{{ category.get_url }}">{{ category.category_name }}</a></li>
+                            <li><a href="{{ category.get_url }}" style="text-decoration: none; color: gray;">{{ category.category_name }}</a></li>
                         {% endfor %}
-                    
-                        <h3>Locations</h3>
+                        <br><br>
+                        <h3 style="color: whitesmoke">Locations</h3>
                         {% for location in location_links %}
-                        <li><a href="{{ location.get_url }}">{{ location.location_name }}</a></li>
+                        <li><a href="{{ location.get_url }}" style="text-decoration: none; color: gray;">{{ location.location_name }}</a></li>
                         {% endfor %}
                     </ul>
-                  <input class="agency-filter" type="range">
                 </div>
                 <div class="agency-gallery">  
                   {% for property in properties %}
@@ -35,7 +36,7 @@
                     <div class="texto-locations">
                       <h2>{{ property.property_name }}</h2>
                       <p>{{ property.description }}</p>
-                      <a href="{{ property.get_url }}">SEE PROPERTY</a>
+                      <a style="margin-top: -10px;" href="{{ property.get_url }}">SEE PROPERTY</a>
                     </div>
                   </div>
                   {% endfor %}

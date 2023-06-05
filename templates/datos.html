@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div style="text-align: center;">
+    <h1 style="font-size: 24px; text-transform: uppercase;">COMPLETE LOS SIGUIENTES DATOS PARA CONTINUAR CON EL PROCESO</h1><br/><br/>
+    <p style="font-size: 20px;">Fecha de ingreso:</p>
+    <div style="width: 10%; margin: 0 auto;">
+      <input type="date" style="width: 100%; font-size: 16px;" /><br/><br/>
+    </div>
+    <p style="font-size: 20px;">Fecha de salida:</p>
+    <div style="width: 10%; margin: 0 auto;">
+      <input type="date" style="width: 100%; font-size: 16px;" /><br/><br/>
+    </div>
+    <p style="font-size: 20px;">Ingrese su nombre completo:</p>
+    <div style="width: 30%; margin: 0 auto;">
+      <input type="text" style="width: 100%; font-size: 16px;" /><br/><br/>
+    </div>
+    <p style="font-size: 20px;">Ingrese su número de identificación:</p>
+    <div style="width: 30%; margin: 0 auto;">
+      <input type="text" style="width: 100%; font-size: 16px;" /><br/><br/>
+    </div>
+    <p style="font-size: 20px;">Ingrese su número de contacto:</p>
+    <div style="width: 30%; margin: 0 auto;">
+      <input type="text" style="width: 100%; font-size: 16px;" /><br/><br/>
+    </div>
+    <p style="font-size: 20px;">Ingrese su correo electrónico:</p>
+    <div style="width: 30%; margin: 0 auto;">
+      <input type="text" style="width: 100%; font-size: 16px;" /><br/><br/>
+    </div>
+    
+    <p style="font-size: 20px;">Cargar o subir foto personal:</p>
+    <input type="file" /><br/><br/>
+    <p style="font-size: 20px;">Cargar o subir foto de su documento:</p>
+    <input type="file" /><br/><br/>
+    <p style="font-size: 20px;">Cargar o subir huella dactilar escaneada:</p>
+    <input type="file" /><br/><br/>
+    <input type="checkbox" id="dataProcessing" name="dataProcessing" value="dataProcessing" style="font-size: 12px;">
+    <label for="dataProcessing" style="font-size: 12px;">Autorizo el tratamiento de datos</label><br/><br/>
+    <button style="background-color: #FCE88D; color: black; border: 1px solid black; font-size: 16px; padding: 10px 20px;">Enviar</button>
+  </div>
+  <br><br>
+{% endblock %}
