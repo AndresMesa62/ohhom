@@ -39,4 +39,3 @@ def property_detail(request, category_slug, property_slug):
         'property_gallery':property_gallery,
     }
     return render(request,'agency/property_detail.html',context)
-
