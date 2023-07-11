@@ -13,4 +13,3 @@ echo .
 echo .
 echo .
 echo .
-python manage.py runserver
